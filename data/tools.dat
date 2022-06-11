@@ -267,7 +267,7 @@ pwnat|pwnat|maintaining_access|https://github.com/samyk/pwnat.git|git|clang,gcc,
 pybluez|pybluez|null|https://github.com/karulis/pybluez.git|git|python,git
 pydictor|pydictor|null|https://github.com/LandGrey/pydictor.git|git|python,git
 pyphisher|pyphisher|information_gathering,web_hacking|https://github.com/KasRoudra/pyphisher.git|git|python,wget,curl,php,unzip
-python|python|programming_language|null|package_manager|null
+python3|python3|programming_language|null|package_manager|null
 qark|qark|null|https://github.com/linkedin/qark.git|git|python,git
 rang3r|rang3r|vulnerability_scanner|https://github.com/floriankunushevci/rang3r.git|git|python,git
 rdpy|rdpy|null|https://github.com/citronneur/rdpy.git|git|python,git

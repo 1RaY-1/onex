@@ -1,29 +1,15 @@
 #!/bin/sh
-# Name : Onex
-# Date : 1 November 2021
-# Description : Onex is a hacking tools installer and package manager for hacker's.
+# Name : Onex installer script
+# Read about onex in README.md 
 
-nc="\033[00m"
-red="\033[01;31m"
-green="\033[01;32m"
-yellow="\033[01;33m"
-blue="\033[01;34m"
-purple="\033[01;35m"
-cyan="\033[01;36m"
+set -e
 
-logo="${yellow}
-  ___  _ __   ___${red}__  __
-${yellow} / _ \\| '_ \\ / _ ${red}\\ \\/ /
-${yellow}| (_) | | | |  __/${red}>  < 
-${yellow} \___/|_| |_|\\___${red}/_/\_\\
+logo="
+
+ / _ \\| '_ \\ / _ \\ \\/ /
+| (_) | | | |  __/>  < 
+ \___/|_| |_|\\___/_/\_\\
 "
-
-# checking for system home dir
-if [ -d $HOME ]; then
-  home=$HOME
-else
-  home="~/"
-fi
 
 # checking for system bin dir
 if [ -d /data/data/com.termux/files/usr/bin ]; then
@@ -70,85 +56,59 @@ fi
 # checking for system package manager
 if [ -e /data/data/com.termux/files/usr/bin/pkg ]; then
   pac="pkg"
-  system="termux"
 elif [ `command -v apt` ]; then
   pac="apt"
-  system="linux"
 elif [ `command -v apt-get` ]; then
   pac="apt-get"
-  system="linux"
 elif [ `command -v apk` ]; then
   pac="apk"
-  system="linux"
-elif [ `command -v yum` ]; then
-  pac="yum"
-  system="fedora"
+elif [ `command -v dnf` ]; then
+  pac="dnf"
 elif [ `command -v brew` ]; then
   pac="brew"
-  system="mac"
   sudo=""
 fi
 
 # setup process
 clear
 echo "$logo"
-echo "${green} Installing .... ${nc}"
-sleep 1
-echo "${yellow} Running setup .... ${nc}"
-sleep 1
+
+echo "Do you want to install onex ?? [yes/no]"
+read a 
+if [ $a != "yes" ]; then exit;fi
+
+echo " Installing ... "
+sleep 0.5
 
 # installing dependency
-for each_pac in "wget" "curl" "git"; do
+for each_pac in "curl" "git"; do
   if [ ! `command -v $each_pac` ]; then
-    if [ $sudo ]; then
-      $sudo $pac install $each_pac -y
-    else
-      $pac install $each_pac -y
-    fi
+    $sudo $pac install $each_pac -y
   fi
 done
 
 # removing old one
 if [ -e $bin/onex ]; then
   if [ -d $conf_dir/onex ]; then
-    if [ $sudo ]; then
-      $sudo rm -rf $bin/onex
-      $sudo rm -rf $conf_dir/onex
-    else
-      rm -rf $bin/onex
-      rm -rf $conf_dir/onex
-    fi
+    $sudo rm -rf $bin/onex
+    $sudo rm -rf $conf_dir/onex
   fi
 fi
 
 # install onex
 if [ $0 = "install" -o $0 = "./install" ]; then
   if [ -e onex ]; then
-    if [ $sudo ]; then
-      $sudo mv -v onex $bin
-      $sudo chmod +x $bin/onex
-    else
-      mv -v onex $bin
-      chmod +x $bin/onex
-    fi
+    $sudo mv -v onex $bin
+    $sudo chmod +x $bin/onex
   fi
   cd ..
   if [ -d onex ]; then
-    if [ $sudo ]; then
     $sudo mv -v onex $conf_dir
-    else
-      mv -v onex $conf_dir
-    fi
   fi
 else
   if [ -e onex/onex ]; then
-    if [ $sudo ]; then
-      $sudo mv -v onex/onex $bin
-      $sudo chmod +x $bin/onex
-    else
-      mv -v onex/onex $bin
-      chmod +x $bin/onex
-    fi
+    $sudo mv -v onex/onex $bin
+    $sudo chmod +x $bin/onex
   fi
   if [ -d onex ]; then
     if [ $sudo ]; then
@@ -160,16 +120,17 @@ else
 fi
 
 # check onex is installed or not
-if [ -e $bin/onex ]; then
+if command -v $bin/onex ; then
   if [ -d $conf_dir/onex ]; then
     clear
     echo "$logo"
-    echo " ${purple}Onex ${green}installed successfully !!"
-    echo " ${green}type ${nc}'onex -h'${green} for more.${nc}"
-  else
-    clear
-    echo "$logo"
-    echo " ${red}Sorry ${cyan}: onex ${red}is not installed !!"
-    echo " ${green}Please try again${nc}"
+    echo " Onex installed successfully !!"
+    echo " type 'onex -h' for more."
   fi
+else
+  clear
+  echo "$logo"
+  echo " Sorry: onex is not installed !!"
+  echo " Please try again"
+  echo " If you can't solve the problem, tell about your problem in:  https://github.com/1RaY-1/onex/issues"
 fi
