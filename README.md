@@ -1,6 +1,7 @@
 # Onex v0.2
 
-***"Onex a hacking tools library, an improved version of ToolX"***
+***"Onex a hacking tools library, a better version of ToolX"***
+
 Onex is a pentesting tools installer for termux and linux distros made for cybersecurity experts.
 Onex manages more than 400+ pentesting tools that can be installed on single click
 
@@ -9,6 +10,9 @@ Onex manages more than 400+ pentesting tools that can be installed on single cli
 <img width="47%" src="doc/Screenshot_2019-12-01-12-10-02-1.png"/>
 <img width="47%" src="doc/Screenshot_2019-12-01-12-09-26-1.png"/>
 </p>
+
+## What's new ?
+Added/Changed/Removed many small things to improve this tool.
 
 # Disclaimer
 
@@ -29,7 +33,7 @@ This tool is made for educational purposes only!!
 Onex works on any of the following operating systems:
 - **Android** (Using the Termux App)
 - **Linux** (Ubuntu, Kali, Fedora)
-- **Mac** (Should work, but unfortunately I couldn't test onex on mac, so if find any bugs, tell us by creating an issue or help us by creating a PR.)
+- **Mac** (Should work, but unfortunately I couldn't test onex on mac, so if find any bugs, tell us by creating an issue.)
 
 ------------------------------------------------------------------------
 
@@ -88,8 +92,6 @@ Type `onex -r` or `onex remove` to uninstall onex (maybe you'll have to enter su
 
 ## Found a Bug ?
 Tell about your problem in [issue](https://github.com/1RaY-1/onex/issues) and we'll try to help you.
-
-Or better try to solve it and submit your solution in a [Pull request](https://github.com/1RaY-1/onex/pulls)
 
 -----------------------------------------------------------------------
 
