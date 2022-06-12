@@ -28,6 +28,7 @@ This tool is made for educational purposes only!!
 ![onex](https://user-images.githubusercontent.com/78962948/173186099-07f32d4f-6c25-46fb-9eb4-83b43abeecfc.gif)
 
 ------------------------------------------------------------------------
+
 ## Operating System Requirements
 
 Onex works on any of the following operating systems:
@@ -41,6 +42,7 @@ Onex works on any of the following operating systems:
 Onex requieres following packages to run properly:
 * `curl`
 * `git`
+
 ------------------------------------------------------------------------
 
 ## How to install onex?
@@ -56,6 +58,7 @@ Go to this directory and run onex
 
 **If want to be able to run onex by just typing `onex`, type the following:**
 * `chmod +x install && ./install`
+
 ------------------------------------------------------------------------
 
 ## How to use onex ?
@@ -84,6 +87,7 @@ Enter a Number for a specific output:
 - (5) : To exit the tool.
 
 ------------------------------------------------------------------------
+
 ### How to remove ?
 
 Type `onex -r` or `onex remove` to uninstall onex (maybe you'll have to enter sudo password).
@@ -98,6 +102,8 @@ Tell about your problem in [issue](https://github.com/1RaY-1/onex/issues) and we
 ## About contribution
 I would be happy if you could add a cool feature or any bugs solution for onex to improve it.
 
+---------------------------------------------------------------------
+
 ## ToDo
  * Add option **Install all tools**
  * Fix small bugs
@@ -105,5 +111,6 @@ I would be happy if you could add a cool feature or any bugs solution for onex t
  * Add more tools
 
 ------------------------------------------------------------------------
+
 ## License
 Onex is licensed under [MIT](https://github.com/1RaY-1/onex/blob/main/LICENSE) License.
