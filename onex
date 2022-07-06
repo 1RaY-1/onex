@@ -877,6 +877,8 @@ elif [ $# -eq 2 ]; then
     ;;
   esac
 else
+
+# To fix. Something is maybe wrong here (buggy):
   if [[ $1 = "install" || $1 = "-i" ]]; then
     args=("$@") 
     ELEMENTS=${#args[@]} 
