@@ -1,15 +1,21 @@
 #!/bin/sh
-# Name : Onex installer script
-# Read about onex in README.md 
+# Name : Onex
+# Date : 24 November 2019
+# Description : onex is a hacking tools installer and package manager for hacker's.
 
-set -e
-
-logo="
-
- / _ \\| '_ \\ / _ \\ \\/ /
-| (_) | | | |  __/>  < 
- \___/|_| |_|\\___/_/\_\\
+logo="\033[01;33m
+  ___  _ __   ___\033[01;31m__  __
+\033[01;33m / _ \\| '_ \\ / _ \033[01;31m\\ \\/ /
+\033[01;33m| (_) | | | |  __/\033[01;31m>  < 
+\033[01;33m \___/|_| |_|\\___\033[01;31m/_/\_\\
 "
+
+# checking for system home dir
+if [ -d $HOME ]; then
+  home=$HOME
+else
+  home="~/"
+fi
 
 # checking for system bin dir
 if [ -d /data/data/com.termux/files/usr/bin ]; then
@@ -47,68 +53,151 @@ else
 fi
 
 # checking for system root access
-if [ `command -v sudo` ]; then
+if [ -e /usr/lib/sudo ]; then
+  sudo="sudo"
+elif [ -e /usr/bin/sudo ]; then
+  sudo="sudo"
+elif [ -e /usr/sbin/sudo ]; then
+  sudo="sudo"
+elif [ -e /lib/sudo ]; then
+  sudo="sudo"
+elif [ -e /bin/sudo ]; then
+  sudo="sudo"
+elif [ -e /sbin/sudo ]; then
+  sudo="sudo"
+elif [ -e /data/data/com.termux/files/usr/bin/sudo ]; then
   sudo="sudo"
 else
   sudo=""
 fi
 
 # checking for system package manager
-if [ -e /data/data/com.termux/files/usr/bin/pkg ]; then
-  pac="pkg"
-elif [ `command -v apt` ]; then
-  pac="apt"
-elif [ `command -v apt-get` ]; then
+if [ -e /bin/apt ]; then
   pac="apt-get"
-elif [ `command -v apk` ]; then
+  system="linux"
+elif [ -e /bin/apt-get ]; then
+  pac="apt-get"
+  system="linux"
+elif [ -e /usr/bin/apt-get ]; then
+  pac="apt-get"
+  system="linux"
+elif [ -e /sbin/apt-get ]; then
+  pac="apt-get"
+  system="linux"
+elif [ -e /usr/sbin/apt-get ]; then
+  pac="apt-get"
+  system="linux"
+elif [ -e /bin/apk ]; then
   pac="apk"
-elif [ `command -v dnf` ]; then
-  pac="dnf"
-elif [ `command -v brew` ]; then
+  system="linux"
+elif [ -e /usr/bin/apk ]; then
+  pac="apk"
+  system="linux"
+elif [ -e /sbin/apk ]; then
+  pac="apk"
+  system="linux"
+elif [ -e /usr/sbin/apk ]; then
+  pac="apk"
+  system="linux"
+elif [ -e /bin/yum ]; then
+  pac="yum"
+  system="fedora"
+elif [ -e /usr/bin/yum ]; then
+  pac="yum"
+  system="fedora"
+elif [ -e /sbin/yum ]; then
+  pac="yum"
+  system="fedora"
+elif [ -e /usr/sbin/yum ]; then
+  pac="yum"
+  system="fedora"
+elif [ -e /usr/local/bin/brew ]; then
   pac="brew"
+  system="mac"
   sudo=""
+elif [ -e /data/data/com.termux/files/usr/bin/pkg ]; then
+  pac="pkg"
+  system="termux"
+elif [ -e /data/data/com.termux/files/usr/bin/apt ]; then
+  pac="apt"
+  system="termux"
+elif [ -e /data/data/com.termux/files/usr/bin/apt-get ]; then
+  pac="apt-get"
+  system="termux"
 fi
 
 # setup process
 clear
 echo "$logo"
-
-echo "Do you want to install onex ?? [yes/no]"
-read a 
-if [ $a != "yes" ]; then exit;fi
-
-echo " Installing ... "
-sleep 0.5
+echo "\033[01;32m Installing .... \033[00m"
+sleep 1
+echo "\033[01;33m Running setup .... \033[00m"
+sleep 1
 
 # installing dependency
-for each_pac in "curl" "git"; do
-  if [ ! `command -v $each_pac` ]; then
-    $sudo $pac install $each_pac -y
+if [ ! -e $bin/wget ]; then
+  if [ $sudo ]; then
+    $sudo $pac install wget -y
+  else
+    $pac install wget -y
   fi
-done
+fi
+if [ ! -e $bin/curl ]; then
+  if [ $sudo ]; then
+    $sudo $pac install curl -y
+  else
+    $pac install curl -y
+  fi
+fi
+if [ ! -e $bin/git ]; then
+  if [ $sudo ]; then
+    $sudo $pac install git -y
+  else
+    $pac install git -y
+  fi
+fi
 
 # removing old one
 if [ -e $bin/onex ]; then
   if [ -d $conf_dir/onex ]; then
-    $sudo rm -rf $bin/onex
-    $sudo rm -rf $conf_dir/onex
+    if [ $sudo ]; then
+      $sudo rm -rf $bin/onex
+      $sudo rm -rf $conf_dir/onex
+    else
+      rm -rf $bin/onex
+      rm -rf $conf_dir/onex
+    fi
   fi
 fi
 
 # install onex
 if [ $0 = "install" -o $0 = "./install" ]; then
   if [ -e onex ]; then
-    $sudo mv -v onex $bin
-    $sudo chmod +x $bin/onex
+    if [ $sudo ]; then
+      $sudo mv -v onex $bin
+      $sudo chmod +x $bin/onex
+    else
+      mv -v onex $bin
+      chmod +x $bin/onex
+    fi
   fi
   cd ..
   if [ -d onex ]; then
+    if [ $sudo ]; then
     $sudo mv -v onex $conf_dir
+    else
+      mv -v onex $conf_dir
+    fi
   fi
 else
   if [ -e onex/onex ]; then
-    $sudo mv -v onex/onex $bin
-    $sudo chmod +x $bin/onex
+    if [ $sudo ]; then
+      $sudo mv -v onex/onex $bin
+      $sudo chmod +x $bin/onex
+    else
+      mv -v onex/onex $bin
+      chmod +x $bin/onex
+    fi
   fi
   if [ -d onex ]; then
     if [ $sudo ]; then
@@ -120,17 +209,16 @@ else
 fi
 
 # check onex is installed or not
-if command -v $bin/onex ; then
+if [ -e $bin/onex ]; then
   if [ -d $conf_dir/onex ]; then
     clear
     echo "$logo"
-    echo " Onex installed successfully !!"
-    echo " type 'onex -h' for more."
+    echo " \033[00mOnex \033[01;32minstalled successfully !!"
+    echo " \033[01;32mtype \033[00m'onex -h'\033[01;32m for more.\033[00m"
+  else
+    clear
+    echo "$logo"
+    echo " \033[01;31mSorry \033[00m: onex \033[01;31mis not installed !!"
+    echo " \033[01;32mPlease try again\033[00m"
   fi
-else
-  clear
-  echo "$logo"
-  echo " Sorry: onex is not installed !!"
-  echo " Please try again"
-  echo " If you can't solve the problem, tell about your problem in:  https://github.com/1RaY-1/onex/issues"
 fi
