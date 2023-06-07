@@ -1,54 +1,67 @@
 # Onex v0.2
 
-***"A simple tools installer made for cybersecurity experts"***
+***"Onex a hacking tools library, a better version of ToolX"***
 
-Onex is a hacking tools installer made for cybersecurity experts.
-Onex manages more than 400+ pentesting tools that can be installed on single click.
+Onex is a pentesting tools installer for termux and linux distros made for cybersecurity experts.
+Onex manages more than 400+ pentesting tools that can be installed on single click
+
+<br>
+<p align="center">
+<img width="47%" src="doc/Screenshot_2019-12-01-12-10-02-1.png"/>
+<img width="47%" src="doc/Screenshot_2019-12-01-12-09-26-1.png"/>
+</p>
+
+## What's new ?
+Added/Changed/Removed many small things to improve this tool.
 
 # Disclaimer
 
 WE ARE NOT RESPONSIBLE FOR ANY MISUSE CAUSED BY THIS TOOL.
 
 Any actions and or activities related to Onex is solely your responsibility. 
-The contributors will not be held responsible in the event any criminal charges be brought against any individuals misusing this toolkit to break the law.
-This tool is made for educational purposes only!
+The contributors will not be held responsible in the event any criminal charges be brought against any individuals misusing this toolkit to break the law.\
+This tool is made for educational purposes only!!
+
+-----------------------------------------------------------------------
+
+## Small demo
+![onex](https://user-images.githubusercontent.com/78962948/173186099-07f32d4f-6c25-46fb-9eb4-83b43abeecfc.gif)
+
+------------------------------------------------------------------------
 
 ## Operating System Requirements
 
 Onex works on any of the following operating systems:
-- **Android** (Using Termux)
-- **Linux** (Ubuntu, Kali, Fedora, etc... But not Arch Linux)
-- **Mac** (Should work)
+- **Android** (Using the Termux App)
+- **Linux** (Ubuntu, Kali, Fedora)
+- **Mac** (Should work, but unfortunately I couldn't test onex on mac, so if find any bugs, tell us by creating an issue.)
 
 ------------------------------------------------------------------------
 
 ### Dependencies
-
 Onex requieres following packages to run properly:
 * `curl`
 * `git`
 
 ------------------------------------------------------------------------
 
-## Installation via terminal (on debian based distros/termux)
+## How to install onex?
 
- Install git (on termux no need to write `sudo`):
-* `sudo apt update`
+Open the terminal and type following commands.
+
 * `sudo apt install git`
 
- Download onex:
 * `git clone https://github.com/1RaY-1/onex.git`
 
-* Go to the downloaded directory and run 'onex' with `bash`
+Go to this directory and run onex
+* `cd onex;bash onex`
 
-**To completely install onex, type the following (in onex directory):**
+**If want to be able to run onex by just typing `onex`, type the following:**
 * `chmod +x install && ./install`
-
-*On non Debian distros, just don't use apt but your package manager and type same commands*
 
 ------------------------------------------------------------------------
 
-## How to use onex:
+## How to use onex ?
 
 Onex is very simple and easy to use tool, its available in both CLI and manual mode.
 
@@ -75,14 +88,27 @@ Enter a Number for a specific output:
 
 ------------------------------------------------------------------------
 
-### How to remove:
+### How to remove ?
 
-Type `onex -r` or `onex remove` to uninstall onex.
+Type `onex -r` or `onex remove` to uninstall onex (maybe you'll have to enter sudo password).
 
 ------------------------------------------------------------------------
 
-## Demo
-![onex](https://user-images.githubusercontent.com/78962948/173186099-07f32d4f-6c25-46fb-9eb4-83b43abeecfc.gif)
+## Found a Bug ?
+Tell about your problem in [issue](https://github.com/1RaY-1/onex/issues) and we'll try to help you.
+
+-----------------------------------------------------------------------
+
+## About contribution
+I would be happy if you could add a cool feature or any bugs solution for onex to improve it.
+
+---------------------------------------------------------------------
+
+## ToDo
+ * Add option **Install all tools**
+ * Fix small bugs
+ * Support Arch Linux
+ * Add more tools
 
 ------------------------------------------------------------------------
 

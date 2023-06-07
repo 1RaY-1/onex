@@ -107,6 +107,9 @@ elif [ `command -v apt-get` ]; then
 elif [ `command -v apk` ]; then
   pac="apk"
   system="linux"
+elif [ `command -v dnf` ]; then
+    pac="dnf"
+    system="fedora"
 elif [ `command -v yum` ]; then
   pac="yum"
   system="fedora"
@@ -881,17 +884,18 @@ elif [ $# -eq 2 ]; then
       echo -e "${blue}type ${nc}:\n  'onex -h' or 'onex help' for help.${nc}"
     ;;
   esac
-else
+#else
 
+#This allows us to install multiple tools at once
 # To fix. Something is maybe wrong here (buggy):
-  if [[ $1 = "install" || $1 = "-i" ]]; then
-    args=("$@") 
-    ELEMENTS=${#args[@]} 
-    for (( i=2;i<=$ELEMENTS;i++)); do 
-        cli_install ${args[${i}]} 
-    done
-
-  else
+#  if [[ $1 = "install" || $1 = "-i" ]]; then
+#    args=("$@") 
+#    ELEMENTS=${#args[@]} 
+#    for (( i=2;i<=$ELEMENTS;i++)); do 
+#        cli_install ${args[${i}]} 
+#    done
+#
+ else
     echo -e "${blue}type ${nc}:\n  'onex -h' or 'onex help' for help.${nc}"
-  fi
+#  fi
 fi

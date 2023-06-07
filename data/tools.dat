@@ -70,7 +70,7 @@ OSIF|OSIF|information_gathering|https://github.com/ciku370/OSIF.git|git|python,g
 PadBuster|PadBuster|web_hacking|https://github.com/AonCyberLabs/PadBuster.git|git|perl,git
 Parsero|Parsero|information_gathering|https://github.com/behindthefirewalls/Parsero.git|git|python,git
 PiDense|PiDense|null|https://github.com/WiPi-Hunter/PiDense.git|git|python,git
-Planetwork-DDOS|Planetwork-DDOS|ddos,stress_testing|https://github.com/WORXKiT/Planetwork-DDOS.git|git|python,git
+Planetwork-DDOS|Planetwork-DDOS|ddos,stress_testing|https://github.com/Hydra7/Planetwork-DDOS.git|git|python,git
 PowerSploit|PowerSploit|maintaining_access|https://github.com/PowerShellMafia/PowerSploit.git|git|git
 PwnSTAR|PwnSTAR|null|https://github.com/SilverFoxx/PwnSTAR.git|git|python,git
 PyBozoCrack|PyBozoCrack|null|https://github.com/ikkebr/PyBozoCrack.git|git|python,git
@@ -99,6 +99,7 @@ TermuxAlpine|TermuxAlpine|termux_os|https://github.com/Hax4us/TermuxAlpine.git|g
 Th3inspector|Th3inspector|null|https://github.com/Moham3dRiahi/Th3inspector.git|git|perl,git
 The-Eye|The-Eye|null|https://github.com/EgeBalci/The-Eye.git|git|golang,git
 TheFatRat|TheFatRat|null|https://github.com/Screetsec/TheFatRat.git|git|git
+Tool-X|Tool-X|null|https://github.com/Rajkumrdusad/Tool-X.git|git|python,git
 Umbrella|Umbrella|null|https://github.com/4w4k3/Umbrella.git|git|git
 Vegile|Vegile|null|https://github.com/Screetsec/Vegile.git|git|git
 WP-plugin-scanner|WP-plugin-scanner|web_hacking|https://github.com/mintobit/WP-plugin-scanner.git|git|python,git
@@ -371,6 +372,7 @@ nexphisher|nexphisher|information_gathering|https://github.com/htr-tech/nexphish
 blackeye|blackeye|null|https://github.com/An0nUD4Y/blackeye.git|git|wget,unzip,curl,php,git
 zeal-kali-installer|zeal-kali-installer|null|https://github.com/1RaY-1/zeal-kali-installer.git|git|git
 torbrowser-launcher|torbrowser-launcher|null|null|package_manager|null
+smsbaher|smsbaher|null|https://github.com/Antaskin/smsbaher.git|git|python3,git
 truecrack|truecrack|password_attack|https://github.com/lvaccaro/truecrack.git|git|gcc,clang,python,git
 sucrack|sucrack|password_attack|https://github.com/hemp3l/sucrack.git|git|gcc,git
 arping|arping|information_gathering|https://github.com/ThomasHabets/arping.git|git|,git
@@ -414,7 +416,3 @@ KitHack|KitHack|null|https://github.com/AdrMXR/KitHack.git|git|python3,git
 GitMiner|GitMiner|information_gathering|https://github.com/UnkL4b/GitMiner.git|git|python3,git
 Passhunt|Passhunt|information_gathering|https://github.com/Viralmaniar/Passhunt.git|git|python3,git
 dotdotslash|dotdotslash|exploitation_tools|https://github.com/jcesarstef/dotdotslash.git|git|python3,git
-k-fuscator|k-fuscator|null|https://github.com/KasRoudra/k-fuscator.git|git|python3,git
-VidPhisher|VidPhisher|null|https://github.com/KasRoudra/VidPhisher.git|git
-backdoor-apk|backdoor-apk|exploitation_tools|https://github.com/dana-at-cp/backdoor-apk.git|git|git
-python-keylogger|python-keylogger|null|https://github.com/davidbombal/python-keylogger|git|python3,git
