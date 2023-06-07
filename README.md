@@ -1,42 +1,54 @@
-# Onex
+# Onex v0.2
 
-***"onex a hacking tools library."***
-Onex is a kali linux hacking tools installer for termux and other linux distribution. Onex is a package manager for hacker's.
-Onex manage more than 370+ hacking tools that can be installed on single click. Use `onex install [tool_name]` command to install any hacking tool.
+***"A simple tools installer made for cybersecurity experts"***
 
-<br>
-<p align="center">
-<img width="47%" src="doc/Screenshot_2019-12-01-12-10-02-1.png"/>
-<img width="46%" src="doc/Screenshot_2019-12-01-12-09-26-1.png"/>
-</p>
+Onex is a hacking tools installer made for cybersecurity experts.
+Onex manages more than 400+ pentesting tools that can be installed on single click.
 
-------------------------------------------------------------------------
+# Disclaimer
+
+WE ARE NOT RESPONSIBLE FOR ANY MISUSE CAUSED BY THIS TOOL.
+
+Any actions and or activities related to Onex is solely your responsibility. 
+The contributors will not be held responsible in the event any criminal charges be brought against any individuals misusing this toolkit to break the law.
+This tool is made for educational purposes only!
 
 ## Operating System Requirements
 
 Onex works on any of the following operating systems:
-- **Android** (Using the Termux App)
-- **Linux** (Linux Based Systems)
+- **Android** (Using Termux)
+- **Linux** (Ubuntu, Kali, Fedora, etc... But not Arch Linux)
+- **Mac** (Should work)
 
 ------------------------------------------------------------------------
 
-## How to install onex?
+### Dependencies
 
-Open the terminal and type following commands.
-
-* `apt update`
-
-* `apt install git`
-
-* `git clone https://github.com/rajkumardusad/onex.git`
-
-* `chmod +x onex/install`
-
-* `sh onex/install` if not work than use `./onex/install`
+Onex requieres following packages to run properly:
+* `curl`
+* `git`
 
 ------------------------------------------------------------------------
 
-## How to use onex ?
+## Installation via terminal (on debian based distros/termux)
+
+ Install git (on termux no need to write `sudo`):
+* `sudo apt update`
+* `sudo apt install git`
+
+ Download onex:
+* `git clone https://github.com/1RaY-1/onex.git`
+
+* Go to the downloaded directory and run 'onex' with `bash`
+
+**To completely install onex, type the following (in onex directory):**
+* `chmod +x install && ./install`
+
+*On non Debian distros, just don't use apt but your package manager and type same commands*
+
+------------------------------------------------------------------------
+
+## How to use onex:
 
 Onex is very simple and easy to use tool, its available in both CLI and manual mode.
 
@@ -44,16 +56,11 @@ Onex is very simple and easy to use tool, its available in both CLI and manual m
 `onex -h` or `onex help` for help.
 
 Options :
-- `onex install [tool_name]` install any tool.
-- `onex -i [tool_name]` install any tool.
-- `onex search [tool_name]` search any tool.
-- `onex -s [tool_name]` search any tool.
-- `onex list` list all tools.
-- `onex list -a` list all tools.
-- `onex -l` list all tools.
-- `onex -l -a` list all tools.
-- `onex help` get help.
-- `onex -h` get help.
+- `onex install/-s [tool_name]` install any tool.
+- `onex install/-s [tool_name1] [tool_name2] [etc..]` install multiple tools (buggy)
+- `onex search/-s [tool_name]` search any tool.
+- `onex list/-l` list all tools.
+- `onex help/-h` get help.
 
 ### Menu Mode :
 
@@ -68,8 +75,16 @@ Enter a Number for a specific output:
 
 ------------------------------------------------------------------------
 
-**Warning**
+### How to remove:
 
-We are not responsible for any misuse or damage caused by this program. use this tool at your own risk!
+Type `onex -r` or `onex remove` to uninstall onex.
 
+------------------------------------------------------------------------
 
+## Demo
+![onex](https://user-images.githubusercontent.com/78962948/173186099-07f32d4f-6c25-46fb-9eb4-83b43abeecfc.gif)
+
+------------------------------------------------------------------------
+
+## License
+Onex is licensed under [MIT](https://github.com/1RaY-1/onex/blob/main/LICENSE) License.
