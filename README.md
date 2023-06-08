@@ -72,7 +72,6 @@ Onex is very simple and easy to use tool, its available in both CLI and manual m
 
 Options :
 - `onex install/-s [tool_name]` install any tool.
-- `onex install/-s [tool_name1] [tool_name2] [etc..]` install multiple tools (buggy)
 - `onex search/-s [tool_name]` search any tool.
 - `onex list/-l` list all tools.
 - `onex help/-h` get help.
