@@ -2,8 +2,10 @@
 
 ***"Onex a hacking tools library, a better version of ToolX"***
 
+**This is the stable branch, which means that this version of onex will have less features and less bugs/errors**
+
 Onex is a pentesting tools installer for termux and linux distros made for cybersecurity experts.
-Onex manages more than 400+ pentesting tools that can be installed on single click
+Onex manages more than 410+ pentesting tools that can be installed on single click
 
 <br>
 <p align="center">
@@ -48,16 +50,19 @@ Onex requieres following packages to run properly:
 ## How to install onex?
 
 Open the terminal and type following commands.
+First of all, make sure that you have `git` installed
 
-* `sudo apt install git`
-
-* `git clone https://github.com/1RaY-1/onex.git`
+* ```git clone -b stable --single-branch https://github.com/1ray-1/onex.git```
 
 Go to this directory and run onex
-* `cd onex;bash onex`
+* `cd onex`
+* `bash onex`
 
-**If want to be able to run onex by just typing `onex`, type the following:**
+**If you want to install onex , type the following:**
 * `chmod +x install && ./install`
+
+**Before installing, make sure that the base folder is just called `onex`, and not `onex-stable`, or `onex-old`, etc...
+This is for the `install` script, which is instructed to move the `onex` to a specific directory**
 
 ------------------------------------------------------------------------
 
@@ -106,8 +111,8 @@ I would be happy if you could add a cool feature or any bugs solution for onex t
 
 ## ToDo
  * Add option **Install all tools**
- * Fix small bugs
  * Support Arch Linux
+ * Program install script to rename any `onex-*whateverHERE*` folder to just `onex` before installing it
  * Add more tools
 
 ------------------------------------------------------------------------
