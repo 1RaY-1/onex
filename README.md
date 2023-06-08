@@ -30,7 +30,7 @@ Open the terminal and type following commands.
 
 * `apt install git`
 
-* `git clone https://github.com/1ray-1/onex.git`
+* `git clone -b old --single-branch https://github.com/1ray-1/onex.git`
 
 * `chmod +x onex/install`
 
