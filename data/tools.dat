@@ -415,3 +415,7 @@ KitHack|KitHack|null|https://github.com/AdrMXR/KitHack.git|git|python3,git
 GitMiner|GitMiner|information_gathering|https://github.com/UnkL4b/GitMiner.git|git|python3,git
 Passhunt|Passhunt|information_gathering|https://github.com/Viralmaniar/Passhunt.git|git|python3,git
 dotdotslash|dotdotslash|exploitation_tools|https://github.com/jcesarstef/dotdotslash.git|git|python3,git
+k-fuscator|k-fuscator|null|https://github.com/KasRoudra/k-fuscator.git|git|python3,git
+VidPhisher|VidPhisher|null|https://github.com/KasRoudra/VidPhisher.git|git|git
+backdoor-apk|backdoor-apk|exploitation_tools|https://github.com/dana-at-cp/backdoor-apk.git|git|git
+python-keylogger|python-keylogger|null|https://github.com/davidbombal/python-keylogger|git|python3,git
