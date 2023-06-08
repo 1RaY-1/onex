@@ -13,9 +13,6 @@ Onex manages more than 410+ pentesting tools that can be installed on single cli
 <img width="47%" src="doc/Screenshot_2019-12-01-12-09-26-1.png"/>
 </p>
 
-## What's new ?
-Added/Changed/Removed many small things to improve this tool.
-
 # Disclaimer
 
 WE ARE NOT RESPONSIBLE FOR ANY MISUSE CAUSED BY THIS TOOL.
@@ -36,7 +33,7 @@ This tool is made for educational purposes only!!
 Onex works on any of the following operating systems:
 - **Android** (Using the Termux App)
 - **Linux** (Ubuntu, Kali, Fedora)
-- **Mac** (Should work, but unfortunately I couldn't test onex on mac, so if find any bugs, tell us by creating an issue.)
+- **Mac** (Should work)
 
 ------------------------------------------------------------------------
 
@@ -105,7 +102,7 @@ Tell about your problem in [issue](https://github.com/1RaY-1/onex/issues) and we
 -----------------------------------------------------------------------
 
 ## About contribution
-I would be happy if you could add a cool feature or any bugs solution for onex to improve it.
+I would happy if you could add a cool feature or any bugs solution for onex to improve it.
 
 ---------------------------------------------------------------------
 
