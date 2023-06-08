@@ -1,4 +1,9 @@
-#!/bin/bash 
+#!/bin/bash
+
+# Sometimes on github users delete their repository or they get removed for other reason
+# This script is used to check if any tool from github has been removed which was in the tools.dat file
+# To run it make sure this script is located in the 'onex' folder, which contains data/tools.dat and data/category.dat
+
 tools_data=data/tools.dat 
 
 tool_name=`grep '.' $tools_data | sort -f | sed -n "$1p" | cut -d"|" -f1`
