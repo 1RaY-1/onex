@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Sometimes on github users delete their repository or they get removed for other reason
+# Sometimes users on github delete their repository or they get removed for other reason
 # This script is used to check if any tool from github has been removed which was in the tools.dat file
 # To run it make sure this script is located in the 'onex' folder, which contains data/tools.dat and data/category.dat
 
