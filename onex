@@ -1,22 +1,11 @@
 #!/usr/bin/env bash
 
-# Name : Onex
-# Description : Onex is a cybersecurity tools installer designed for cybersecurity experts.
-# Supported Shells: Bash, Zsh, Sh: colors are buggy
+# Onex :     Program to install hacking tools
+# Version:   0.2
+# License:   MIT
 
-# Version: 0.2
-# What's new: Added/Changed/Removed many small things, to improve this tool.
 
-# Released under MIT LICENSE (see LICENSE file)
-
-# Disclaimer: 
-# WE ARE NOT RESPONSIBLE FOR ANY MISUSE CAUSED BY THIS TOOL
-# Any actions and or activities related to Onex is solely your responsibility. 
-# The contributors will not be held responsible in the event any criminal charges be brought 
-# against any individuals misusing this toolkit to break the law.
-# This Tool is made for educational purposes only!!
-
-# check if running onex with bash or zsh (just in case, cause onex only supports this 2 shells)
+# check if running onex with bash or zsh
 #shell=$(ps -p $$ | awk '$1 != "PID" {print $(NF)}')
 #if [ $shell != "bash" ] && [ $shell != "zsh" ]; then
 #  echo "Sorry, onex doesn't support '$shell'"
