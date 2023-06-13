@@ -1,10 +1,12 @@
 # Onex
 
+**Disclaimer**: This software is meant for educational purposes only. I'm not responsible for any malicious use of the tools you can download using the app.
+
 ***This is the old version of onex and I'm not thinking to implement any changes here***
 
 ***"onex a hacking tools library."***
-Onex is a kali linux hacking tools installer for termux and other linux distribution. Onex is a package manager for hacker's.
-Onex manage more than 370+ hacking tools that can be installed on single click. Use `onex install [tool_name]` command to install any hacking tool.
+Onex is a kali linux hacking tools installer for termux and other linux distribution. Onex is a package manager for pentesters.
+Onex manage more than 370+ hacking tools that can be installed on single click. Use `onex install [tool_name]` command to install any pentesting tool.
 
 <br>
 <p align="center">
@@ -69,9 +71,4 @@ Enter a Number for a specific output:
 - (5) : To exit the tool.
 
 ------------------------------------------------------------------------
-
-**Warning**
-
-We are not responsible for any misuse or damage caused by this program. use this tool at your own risk!
-
 
