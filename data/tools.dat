@@ -369,7 +369,6 @@ check-ip|check-ip|information_gathering|https://github.com/1RaY-1/check-ip.git|g
 MHDDoS|MHDDoS|ddos|https://github.com/MHProDev/MHDDoS.git|git|python,git
 nexphisher|nexphisher|information_gathering|https://github.com/htr-tech/nexphisher.git|git|git,php,curl
 blackeye|blackeye|null|https://github.com/An0nUD4Y/blackeye.git|git|wget,unzip,curl,php,git
-zeal-kali-installer|zeal-kali-installer|null|https://github.com/1RaY-1/zeal-kali-installer.git|git|git
 torbrowser-launcher|torbrowser-launcher|null|null|package_manager|null
 smsbaher|smsbaher|null|https://github.com/maks-04/smsbaher.git|git|python3,git
 truecrack|truecrack|password_attack|https://github.com/lvaccaro/truecrack.git|git|gcc,clang,python,git
