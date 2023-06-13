@@ -1,30 +1,18 @@
 # Onex v0.2
 
-***"Onex a hacking tools library, a better version of ToolX"***
+**Disclaimer**: This software is meant for educational purposes only. I'm not responsible for any malicious use of the tools you can download using the app.
 
-**This is the stable branch, which means that this version of onex will have less features and less bugs/errors**
-
-Onex is a pentesting tools installer for termux and linux distros made for cybersecurity experts.
-Onex manages more than 410+ pentesting tools that can be installed on single click
-
-<br>
-<p align="center">
-<img width="47%" src="doc/Screenshot_2019-12-01-12-10-02-1.png"/>
-<img width="47%" src="doc/Screenshot_2019-12-01-12-09-26-1.png"/>
-</p>
-
-# Disclaimer
-
-WE ARE NOT RESPONSIBLE FOR ANY MISUSE CAUSED BY THIS TOOL.
-
-Any actions and or activities related to Onex is solely your responsibility. 
-The contributors will not be held responsible in the event any criminal charges be brought against any individuals misusing this toolkit to break the law.\
-This tool is made for educational purposes only!!
+**Onex is a hacking tools installer for termux and linux distros made for cybersecurity experts.
+Onex manages 410+ pentesting tools from Information Gathering to Automotive that can be installed on single click.**
 
 -----------------------------------------------------------------------
 
-## Small demo
-![onex](https://user-images.githubusercontent.com/78962948/173186099-07f32d4f-6c25-46fb-9eb4-83b43abeecfc.gif)
+## Screenshots
+![1](https://github.com/1RaY-1/onex/assets/78962948/7388353a-f9c5-4e68-aa93-883831ddc322)
+![2](https://github.com/1RaY-1/onex/assets/78962948/da684b68-3776-4803-a8f5-711cb15d2609)
+![3](https://github.com/1RaY-1/onex/assets/78962948/7297984d-ae69-4e69-8881-c1d46f875d68)
+![4](https://github.com/1RaY-1/onex/assets/78962948/c14005ad-3e54-4da8-ba64-dd57d920b949)
+
 
 ------------------------------------------------------------------------
 
@@ -33,7 +21,7 @@ This tool is made for educational purposes only!!
 Onex works on any of the following operating systems:
 - **Android** (Using the Termux App)
 - **Linux** (Ubuntu, Kali, Fedora)
-- **Mac** (Should work)
+- **Mac** (Should work, but not sure)
 
 ------------------------------------------------------------------------
 
@@ -64,7 +52,6 @@ This is for the `install` script, which is instructed to move the `onex` to a sp
 ------------------------------------------------------------------------
 
 ## How to use onex ?
-
 Onex is very simple and easy to use tool, its available in both CLI and manual mode.
 
 ### CLI Mode :
@@ -77,7 +64,6 @@ Options :
 - `onex help/-h` get help.
 
 ### Menu Mode :
-
 `onex start` to start onex menu mode.
 
 Enter a Number for a specific output:
@@ -90,7 +76,6 @@ Enter a Number for a specific output:
 ------------------------------------------------------------------------
 
 ### How to remove ?
-
 Type `onex -r` or `onex remove` to uninstall onex (maybe you'll have to enter sudo password).
 
 ------------------------------------------------------------------------
