@@ -76,24 +76,12 @@ Enter a Number for a specific output:
 ------------------------------------------------------------------------
 
 ### How to remove ?
-Type `onex -r` or `onex remove` to uninstall onex (maybe you'll have to enter sudo password).
-
-------------------------------------------------------------------------
-
-## Found a Bug ?
-Tell about your problem in [issue](https://github.com/1RaY-1/onex/issues) and we'll try to help you.
-
------------------------------------------------------------------------
-
-## About contribution
-I would happy if you could add a cool feature or any bugs solution for onex to improve it.
+Type `onex -r` or `onex remove` to uninstall onex.
 
 ---------------------------------------------------------------------
 
 ## ToDo
- * Add option **Install all tools**
  * Support Arch Linux
- * Program install script to rename any `onex-*whateverHERE*` folder to just `onex` before installing it
  * Add more tools
 
 ------------------------------------------------------------------------
