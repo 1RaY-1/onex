@@ -406,7 +406,6 @@ ophcrack|ophcrack|password_attack|null|package_manager|null
 webshells|webshells|web_hacking|https://github.com/BlackArch/webshells.git|git|php,perl,gcc,git
 evilginx2|evilginx2|null|https://github.com/kgretzky/evilginx2.git|git|make,git
 android_hid|android_hid|null|https://github.com/androidmalware/android_hid.git|git|git
-zenmap-linux-installer|zenmap-linux-installer|information_gathering,vulnerability_scanner|https://github.com/1RaY-1/zenmap-linux-installer.git|git|nmap,python3,git
 kalitorify|kalitorify|null|https://github.com/brainfucksec/kalitorify.git|git|tor,curl,make,git
 ZipBomb|ZipBomb|null|https://github.com/abdulfatir/ZipBomb.git|git|python2,git
 nmapAutomator|nmapAutomator|information_gathering,vulnerability_scanner|https://github.com/21y4d/nmapAutomator.git|git|nmap,ffuf,gobuster,git
