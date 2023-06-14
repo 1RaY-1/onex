@@ -8,11 +8,10 @@ Onex manages at the moment 420 pentesting tools that can be installed on single 
 -----------------------------------------------------------------------
 
 ## Screenshots
-![1](https://github.com/1RaY-1/onex/assets/78962948/7388353a-f9c5-4e68-aa93-883831ddc322)
-![2](https://github.com/1RaY-1/onex/assets/78962948/da684b68-3776-4803-a8f5-711cb15d2609)
-![3](https://github.com/1RaY-1/onex/assets/78962948/7297984d-ae69-4e69-8881-c1d46f875d68)
-![4](https://github.com/1RaY-1/onex/assets/78962948/c14005ad-3e54-4da8-ba64-dd57d920b949)
-
+![0](https://github.com/1RaY-1/onex/assets/78962948/5289fd6e-f655-4155-8451-3a5b1884b41d)
+![1](https://github.com/1RaY-1/onex/assets/78962948/5d78304d-b5ef-4098-8d3a-d8a45df8b63a)
+![2](https://github.com/1RaY-1/onex/assets/78962948/5fa463a9-9cf8-4ce5-84b7-daacc4a40cc6)
+![3](https://github.com/1RaY-1/onex/assets/78962948/1e659a0f-81bb-4384-a8de-719d69d250ff)
 
 ------------------------------------------------------------------------
 
