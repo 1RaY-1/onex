@@ -20,7 +20,9 @@ Onex manages at the moment 420 pentesting tools that can be installed on single 
 Onex works on any of the following operating systems:
 - **Android** (Using the Termux App)
 - **Linux** (Ubuntu, Kali, Fedora)
-- **Mac** (Should work, but not sure)
+- **Mac** (Should work, but didn't try yet)
+
+**Don't forget that some tools you can download via this app only work on Linux, and others (fewer) only work on Termux!**
 
 ------------------------------------------------------------------------
 
