@@ -83,7 +83,6 @@ Type `onex -r` or `onex remove` to uninstall onex.
 
 ## ToDo
  * Support Arch Linux
- * Add more tools
 
 ------------------------------------------------------------------------
 
