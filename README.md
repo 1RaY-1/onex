@@ -18,18 +18,18 @@ Onex manages at the moment 420 pentesting tools that can be installed on single 
 ## Operating System Requirements
 
 Onex works on any of the following operating systems:
-- **Android** (Using the Termux App)
-- **Linux** (Ubuntu, Kali, Fedora)
-- **Mac** (Should work, but didn't try yet)
-
-**Don't forget that some tools you can download via this app only work on Linux, and others (fewer) only work on Termux!**
-
+- **Android** (Using Termux)
+- **Linux** (APT, DNF, YUM based distros. Arch or OpenSUSE are not supported)
+- **Mac**
 ------------------------------------------------------------------------
 
-### Dependencies
-Onex requieres following packages to run properly:
-* `curl`
-* `git`
+<details>
+  <summary><h3>Dependencies</h3></summary>
+  Onex requieres following packages to run properly:
+  
+  - `curl`
+  - `git`
+</details>
 
 ------------------------------------------------------------------------
 
@@ -81,8 +81,15 @@ Type `onex -r` or `onex remove` to uninstall onex.
 
 ---------------------------------------------------------------------
 
-## ToDo
- * Support Arch Linux
+<details>
+  <summary><h3>How to use the Tools</h3></summary>
+To understand how to use any tool you've just downloaded with onex, just go to the downloaded folder and <b>read the README.md file</b>: 
+
+```
+cd FOLDER-YOUVE-JUST-DOWNLOADED
+cat README.md
+```
+</details>
 
 ------------------------------------------------------------------------
 
