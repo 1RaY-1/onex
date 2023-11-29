@@ -3,7 +3,7 @@
 **Disclaimer**: This software is meant for educational purposes only. I'm not responsible for any malicious use of the tools you can download using the app.
 
 **Onex is a hacking tools installer for termux and linux distros made for cybersecurity experts.
-Onex manages at the moment 420 pentesting tools that can be installed on single click.**
+Onex manages at the moment 425 pentesting tools that can be installed on single click.**
 
 -----------------------------------------------------------------------
 
