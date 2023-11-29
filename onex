@@ -791,23 +791,23 @@ update() {
           sleep 1
           if [ -e $bin/git ]; then
             if [ $sudo ]; then
-              $sudo git clone https://github.com/rajkumardusad/onex.git ~/onex
+              $sudo git clone https://github.com/1ray-1/onex.git ~/onex
               $sudo chmod +x ~/onex/install
               $sudo sh ~/onex/install
             else
-              git clone https://github.com/rajkumardusad/onex.git ~/onex
+              git clone https://github.com/1ray-1/onex.git ~/onex
               chmod +x ~/onex/install
               sh ~/onex/install
             fi
           else
             if [ $sudo ]; then
               $sudo $pac install git -y
-              $sudo git clone https://github.com/rajkumardusad/onex.git ~/onex
+              $sudo git clone https://github.com/1ray-1/onex.git ~/onex
               $sudo chmod +x ~/onex/install
               $sudo sh ~/onex/install
             else
               $pac install git -y
-              git clone https://github.com/rajkumardusad/onex.git ~/onex
+              git clone https://github.com/1ray-1/onex.git ~/onex
               chmod +x ~/onex/install
               sh ~/onex/install
             fi
@@ -947,20 +947,20 @@ cli_update() {
     sleep 1
     if [ -e $bin/git ]; then
       if [ $sudo ]; then
-        $sudo git clone https://github.com/rajkumardusad/onex.git ~/onex
+        $sudo git clone https://github.com/1ray-1/onex.git ~/onex
         update_process
       else
-        git clone https://github.com/rajkumardusad/onex.git ~/onex
+        git clone https://github.com/1ray-1/onex.git ~/onex
         update_process
        fi
     else
       if [ $sudo ]; then
         $sudo $pac install git -y
-        $sudo git clone https://github.com/rajkumardusad/onex.git ~/onex
+        $sudo git clone https://github.com/1ray-1/onex.git ~/onex
         update_process
       else
         $pac install git -y
-        git clone https://github.com/rajkumardusad/onex.git ~/onex
+        git clone https://github.com/1ray-1/onex.git ~/onex
         update_process
       fi
     fi
