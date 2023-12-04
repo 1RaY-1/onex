@@ -423,3 +423,4 @@ Saphyra-DDoS|Saphyra-DDoS|ddos|https://github.com/anonymous24x7/Saphyra-DDoS.git
 shodan-eye|shodan-eye|information_gathering|https://github.com/BullsEye0/shodan-eye.git|git|python3,git
 MaxPhisher|MaxPhisher|information_gathering|https://github.com/KasRoudra/MaxPhisher.git|git|python3,git
 IP-Tracker|IP-Tracker|information_gathering|https://github.com/KasRoudra/IP-Tracker.git|git|git
+aSYNcrone|aSYNcrone|ddos|https://github.com/fatihsnsy/aSYNcrone.git|git|gcc,git
