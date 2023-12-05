@@ -28,11 +28,11 @@ for url in $tool_url;do
         wget -q --spider $url
         if [ $? -ne 0  ];then 
             count_bad=$((count_bad+1))
-            echo "Found one invalid link (count: ${count_bad})"
+            echo "Found one invalid link (count bad: ${count_bad})"
             echo $url >> TOOLS.txt
         else
             count_good=$((count_good+1))
-            echo "Checked one link (count: ${count_good})"
+            echo "Checked one link (count good: ${count_good})"
         fi
     fi
 done
