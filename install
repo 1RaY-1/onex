@@ -81,7 +81,7 @@ echo " Installing ... "
 sleep 0.5
 
 # installing dependency
-for each_pac in "curl" "git"; do
+for each_pac in "curl" "wget" "git"; do
   if [ ! `command -v $each_pac` ]; then
     $sudo $pac install $each_pac -y
   fi
