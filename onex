@@ -6,12 +6,12 @@
 
 
 # check if running onex with bash or zsh
-#shell=$(ps -p $$ | awk '$1 != "PID" {print $(NF)}')
-#if [ $shell != "bash" ] && [ $shell != "zsh" ]; then
-#  echo "Sorry, onex doesn't support '$shell'"
-#  echo "Run onex with 'bash'"; echo "Type: bash $0"
-#  exit 1
-#fi
+shell=$(ps -p $$ | awk '$1 != "PID" {print $(NF)}')
+if [ $shell != "bash" ] && [ $shell != "zsh" ]; then
+  echo "Sorry, onex doesn't support '$shell'"
+  echo "Run onex with 'bash'"; echo "Type: bash $0"
+  exit 1
+fi
 
 # Colors
 nc="\033[0m"
@@ -764,7 +764,7 @@ cli_install() {
     # display tools name from data
     for tool in $data; do
       # convert to lower case and check tool name
-      if [ `echo -e $tool | cut -d"|" -f1 | tr 'A-Z' 'a-z'` = `echo -e $1 | tr 'A-Z' 'a-z'` ]; then
+      if [[ `echo -e $tool | cut -d"|" -f1 | tr 'A-Z' 'a-z'` = `echo -e $1 | tr 'A-Z' 'a-z'` ]]; then
         get_tool_data=$tool
       fi
     done
@@ -873,18 +873,18 @@ elif [ $# -eq 2 ]; then
       echo -e "${blue}type ${nc}:\n  'onex -h' or 'onex help' for help.${nc}"
     ;;
   esac
-#else
+else
 
-#This allows us to install multiple tools at once
-# To fix. Something is maybe wrong here (buggy):
-#  if [[ $1 = "install" || $1 = "-i" ]]; then
-#    args=("$@") 
-#    ELEMENTS=${#args[@]} 
-#    for (( i=2;i<=$ELEMENTS;i++)); do 
-#        cli_install ${args[${i}]} 
-#    done
-#
+# install multiple tools at once (in cli mode only)
+# but it is a little buggy
+  if [[ $1 = "install" || $1 = "-i" ]]; then
+    args=("$@") 
+    ELEMENTS=${#args[@]} 
+    for (( i=2;i<=$ELEMENTS;i++)); do 
+        cli_install ${args[${i}]} 
+    done
+
  else
     echo -e "${blue}type ${nc}:\n  'onex -h' or 'onex help' for help.${nc}"
-#  fi
+  fi
 fi
