@@ -53,7 +53,6 @@ Hunner|Hunner|null|https://github.com/b3-v3r/Hunner.git|git|python,git
 IP-Tracer|IP-Tracer|information_gathering,ip_tracking|https://github.com/Rajkumrdusad/IP-Tracer|git|php,git
 IPGeoLocation|IPGeoLocation|ip_tracking|https://github.com/maldevel/IPGeoLocation.git|git|python,git
 InSpy|InSpy|information_gathering|https://github.com/leapsecurity/InSpy.git|git|python,git
-Infoga|Infoga|information_gathering|https://github.com/m4ll0k/Infoga.git|git|python,git
 Intersect-2.5|Intersect-2.5|maintaining_access|https://github.com/deadbits/Intersect-2.5.git|git|python,git
 JohnTheRipper|JohnTheRipper|password_attack|https://github.com/magnumripper/JohnTheRipper.git|git|clang,gcc,g++,git
 KatanaFramework|KatanaFramework|null|https://github.com/PowerScript/KatanaFramework.git|git|python,git
@@ -91,7 +90,6 @@ Simple-Fuzzer|Simple-Fuzzer|vulnerability_scanner|https://github.com/orgcandman/
 Sn1per|Sn1per|null|https://github.com/1N3/Sn1per.git|git|python,git
 SocialBox|SocialBox|sniffing_spoofing|https://github.com/TunisianEagles/SocialBox.git|git|git
 SocialFish|SocialFish|password_attack,sniffing_spoofing|https://github.com/UndeadSec/SocialFish.git|git|python,git
-Spammer-Grab|Spammer-Grab|sniffing_spoofing|https://github.com/p4kl0nc4t/Spammer-Grab.git|git|python,git
 Stitch|Stitch|null|https://github.com/nathanlopez/Stitch.git|git|python,git
 Striker|Striker|vulnerability_scanner|https://github.com/s0md3v/Striker.git|git|python,git
 Sublist3r|Sublist3r|information_gathering|https://github.com/aboul3la/Sublist3r.git|git|python,git
@@ -326,7 +324,6 @@ wfdroid-termux|wfdroid-termux|null|https://github.com/bytezcrew/wfdroid-termux.g
 wfuzz|wfuzz|web_hacking|https://github.com/xmendez/wfuzz.git|git|python,git
 wget|wget|package|null|package_manager|null
 wifi-hacker|wifi-hacker|wireless_testing|https://github.com/esc0rtd3w/wifi-hacker.git|git|git
-WifiGod|WifiGod|wireless_testing|https://github.com/waseem-sajjad/WifiGod.git|git|python,git
 wifiphisher|wifiphisher|wireless_testing|https://github.com/wifiphisher/wifiphisher.git|git|python,git
 wifitap|wifitap|wireless_testing|https://github.com/GDSSecurity/wifitap.git|git|python,git
 wifite2|wifite2|wireless_testing|https://github.com/derv82/wifite2.git|git|python,git
@@ -350,7 +347,7 @@ edb-debugger|edb-debugger|reverse_engineering|null|package_manager|null
 zVirus-Gen|zVirus-Gen|null|https://github.com/Scorpio28-Oficial/zVirus-Gen.git|git|git
 nasm|nasm|programming_language|null|package_manager|null
 Keylogger|Keylogger|null|https://github.com/aydinnyunus/Keylogger.git|git|python,git
-XLR8_BOMBER|XLR8_BOMBER|null|https://github.com/sonudohare85/XLR8_BOMBER|git|git
+XLR8_BOMBER|XLR8_BOMBER|null|https://github.com/anubhavanonymous/XLR8_BOMBER|git|python3,git
 b0mb3r|b0mb3r|null|https://github.com/Denishnc/b0mb3r.git|git|python,git
 Tbomb|Tbomb|null|https://github.com/TheSpeedX/TBomb.git|git|python,git
 flashsploit|flashsploit|exploitation_tools|https://github.com/thewhiteh4t/flashsploit.git|git|python,git
