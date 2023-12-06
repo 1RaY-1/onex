@@ -54,6 +54,7 @@ else
 fi
 
 # checking for system package manager
+install="install"
 if [ -e /data/data/com.termux/files/usr/bin/pkg ]; then
   pac="pkg"
 elif [ `command -v apt` ]; then
@@ -64,6 +65,11 @@ elif [ `command -v apk` ]; then
   pac="apk"
 elif [ `command -v dnf` ]; then
   pac="dnf"
+elif [ `command -v yum` ]; then
+  pac="yum"
+elif [ `command -v pacman` ]; then
+  pac="pacman"
+  install="-S"
 elif [ `command -v brew` ]; then
   pac="brew"
   sudo=""
@@ -83,7 +89,7 @@ sleep 0.5
 # installing dependency
 for each_pac in "curl" "wget" "git"; do
   if [ ! `command -v $each_pac` ]; then
-    $sudo $pac install $each_pac -y
+    echo "y" | $sudo $pac $install $each_pac
   fi
 done
 
