@@ -4,15 +4,14 @@
 # Version:   0.2
 # License:   MIT
 
-__version__="0.2.1"
 
-# check if onex is with bash or zsh
-shell=$(ps -p $$ | awk '$1 != "PID" {print $(NF)}')
-if [ $shell != "bash" ] && [ $shell != "zsh" ]; then
-  echo "Sorry, onex doesn't support '$shell'"
-  echo "Run onex with 'bash'"; echo "Type: bash $0"
-  exit 1
-fi
+# check if running onex with bash or zsh
+#shell=$(ps -p $$ | awk '$1 != "PID" {print $(NF)}')
+#if [ $shell != "bash" ] && [ $shell != "zsh" ]; then
+#  echo "Sorry, onex doesn't support '$shell'"
+#  echo "Run onex with 'bash'"; echo "Type: bash $0"
+#  exit 1
+#fi
 
 # Colors
 nc="\033[0m"
@@ -85,33 +84,30 @@ else
 fi
 
 # checking for system package manager
-install="install"
 if [ -e /data/data/com.termux/files/usr/bin/pkg ]; then
   pac="pkg"
+  system="termux"
 elif [ `command -v apt` ]; then
   pac="apt"
+  system="linux"
 elif [ `command -v apt-get` ]; then
   pac="apt-get"
+  system="linux"
 elif [ `command -v apk` ]; then
   pac="apk"
+  system="linux"
 elif [ `command -v dnf` ]; then
-  pac="dnf"
+    pac="dnf"
+    system="fedora"
 elif [ `command -v yum` ]; then
   pac="yum"
-elif [ `command -v pacman` ]; then
-  pac="pacman"
-  install="-S"
+  system="fedora"
 elif [ `command -v brew` ]; then
   pac="brew"
+  system="mac"
   sudo=""
 fi
 
-# install a package by typing less code
-install_pkg () {
-  echo "y" | $sudo $pac $install $1
-}
-
-# If CTRL + C is detected
 trap exit_onex INT 
 exit_onex () {
   clear
@@ -119,15 +115,6 @@ exit_onex () {
   echo -e "${nc}Thanks for using ${green}Onex${nc}"
   exit
 }
-
-# check if missing dependencies
-for each_pac in "curl" "wget" "git"; do
-  if [ ! `command -v $each_pac` ]; then
-    install_pkg $each_pac
-#   Instead of typing:
-#    echo "y" | $sudo $pac $install $each_pac
-  fi
-done
 
 # install tools
 install() {
@@ -160,13 +147,13 @@ install() {
             for dep_name in `echo -e $tool_dependency | tr ',' ' '`; do
               # installing dependency
               if [ ! `command -v $dep_name` ]; then
-                install_pkg $dep_name
+                $sudo $pac install $dep_name -y
               fi
             done
           fi
           # installing tools
           if [ $tool_pac != "" -a $tool_pac != "null" ]; then
-            install_pkg $tool_pac
+            $sudo $pac install $tool_pac -y
           fi
         else
           echo -e "${red}Sorry you are offline !!${nc}"
@@ -195,7 +182,7 @@ install() {
             for dep_name in `echo -e $tool_dependency | tr ',' ' '`; do
               # installing dependency
               if [ ! `command -v $dep_name` ]; then
-                install_pkg $dep_name
+                $sudo $pac install $dep_name -y
               fi
             done
           fi
@@ -230,7 +217,7 @@ install() {
             for dep_name in `echo -e $tool_dependency | tr ',' ' '`; do
               # installing dependency
               if [ ! `command -v $dep_name` ]; then
-                install_pkg $dep_name
+                $sudo $pac install $dep_name -y
               fi
             done
           fi
@@ -290,13 +277,13 @@ install_category_tool() {
             for dep_name in `echo -e $tool_dependency | tr ',' ' '`; do
               # installing dependency
               if [ ! `command -v $dep_name` ]; then
-                install_pkg $dep_name
+                $sudo $pac install $dep_name -y
               fi
             done
           fi
           # installing tools
           if [ $tool_pac != "" -a $tool_pac != "null" ]; then
-            install_pkg $tool_pac
+            $sudo $pac install $tool_pac -y
           fi
         else
           echo -e "${red}Sorry you are offline !!${nc}"
@@ -325,7 +312,7 @@ install_category_tool() {
             for dep_name in `echo -e $tool_dependency | tr ',' ' '`; do
               # installing dependency
               if [ ! `command -v $dep_name` ]; then
-                install_pkg $dep_name
+                $sudo $pac install $dep_name -y
               fi
             done
           fi
@@ -360,7 +347,7 @@ install_category_tool() {
             for dep_name in `echo -e $tool_dependency | tr ',' ' '`; do
               # installing dependency
               if [ ! `command -v $dep_name` ]; then
-                install_pkg $dep_name
+                $sudo $pac install $dep_name -y
               fi
             done
           fi
@@ -516,6 +503,7 @@ update() {
     echo -e "${green}Updating ...${nc}"
     sleep 1
 
+    if ! command -v "git"; then $sudo $pac install git -y; fi
     git clone $onex_link $download_dir/onex
     $sudo chmod +x $download_dir/onex/install
     $sudo sh $download_dir/onex/install
@@ -534,7 +522,7 @@ about() {
   echo -e "$logo"
   echo -e " ${yellow}About: ${cyan}Onex installs the most famous pentesting tools.\n${nc}"
   echo -e " ${yellow}GitHub:  ${red}https://github.com/1RaY-1/onex${nc}"
-  echo -e " ${yellow}Version: ${red} ${__version__}${nc}"
+  echo -e " ${yellow}Version: ${red} 0.2${nc}"
   echo -e " ${yellow}License: ${red} MIT${nc}"
   echo -e "\n\n ${red}Warning:${nc}"
   echo -e " ${cyan}This Tool is made for educational purpose only!${nc}"
@@ -630,6 +618,7 @@ cli_update() {
   if [ $? -eq 0 ]; then
     echo -e "${green}Updating ...${nc}"
     sleep 1
+    if ! command -v "git"; then $sudo $pac install git -y; fi
     git clone $onex_link $download_dir/onex
     update_process
     echo -e "${nc}'onex' ${green} updated successfully !!${nc}"
@@ -671,13 +660,13 @@ install_process() {
             for dep_name in `echo -e $tool_dependency | tr ',' ' '`; do
               # installing dependency
               if [ ! `command -v $dep_name` ]; then
-                install_pkg $dep_name
+                $sudo $pac install $dep_name -y
               fi
             done
           fi
           # installing tools
           if [ $tool_pac != "" -a $tool_pac != "null" ]; then
-            install_pkg $tool_pac
+            $sudo $pac install $tool_pac -y
           fi
         else
           echo -e "${red}Sorry you are offline !!${nc}"
@@ -706,7 +695,7 @@ install_process() {
             for dep_name in `echo -e $tool_dependency | tr ',' ' '`; do
               # installing dependency
               if [ ! `command -v $dep_name` ]; then
-                install_pkg $dep_name
+                $sudo $pac install $dep_name -y
               fi
             done
           fi
@@ -742,7 +731,7 @@ install_process() {
             for dep_name in `echo -e $tool_dependency | tr ',' ' '`; do
               # installing dependency
               if [ ! `command -v $dep_name` ]; then
-                install_pkg $dep_name
+                $sudo $pac install $dep_name -y
               fi
             done
           fi
@@ -775,7 +764,7 @@ cli_install() {
     # display tools name from data
     for tool in $data; do
       # convert to lower case and check tool name
-      if [[ `echo -e $tool | cut -d"|" -f1 | tr 'A-Z' 'a-z'` = `echo -e $1 | tr 'A-Z' 'a-z'` ]]; then
+      if [ `echo -e $tool | cut -d"|" -f1 | tr 'A-Z' 'a-z'` = `echo -e $1 | tr 'A-Z' 'a-z'` ]; then
         get_tool_data=$tool
       fi
     done
@@ -842,7 +831,7 @@ if [ $# -eq 1 ]; then
       cli_remove
     ;;
     help|-h)
-      echo -e "${yellow}Onex ${red} v${__version__}"
+      echo -e "${yellow}Onex ${red} v0.2"
       echo -e "${nc}Usage ${nc}: ${yellow} onex ${nc}[option]... [toolname]...${nc}"
       echo -e "\n  ${blue}Option  \tDescription${nc}"
       echo  -e "  -----------  \t--------------------"
@@ -884,18 +873,18 @@ elif [ $# -eq 2 ]; then
       echo -e "${blue}type ${nc}:\n  'onex -h' or 'onex help' for help.${nc}"
     ;;
   esac
-else
+#else
 
-# install multiple tools at once (in cli mode only)
-# but it is a little buggy
-  if [[ $1 = "install" || $1 = "-i" ]]; then
-    args=("$@") 
-    ELEMENTS=${#args[@]} 
-    for (( i=2;i<=$ELEMENTS;i++)); do 
-        cli_install ${args[${i}]} 
-    done
-
+#This allows us to install multiple tools at once
+# To fix. Something is maybe wrong here (buggy):
+#  if [[ $1 = "install" || $1 = "-i" ]]; then
+#    args=("$@") 
+#    ELEMENTS=${#args[@]} 
+#    for (( i=2;i<=$ELEMENTS;i++)); do 
+#        cli_install ${args[${i}]} 
+#    done
+#
  else
     echo -e "${blue}type ${nc}:\n  'onex -h' or 'onex help' for help.${nc}"
-  fi
+#  fi
 fi
