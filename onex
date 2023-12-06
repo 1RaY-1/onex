@@ -4,8 +4,9 @@
 # Version:   0.2
 # License:   MIT
 
+__version__="0.2.1"
 
-# check if running onex with bash or zsh
+# check if onex is with bash or zsh
 shell=$(ps -p $$ | awk '$1 != "PID" {print $(NF)}')
 if [ $shell != "bash" ] && [ $shell != "zsh" ]; then
   echo "Sorry, onex doesn't support '$shell'"
@@ -84,30 +85,33 @@ else
 fi
 
 # checking for system package manager
+install="install"
 if [ -e /data/data/com.termux/files/usr/bin/pkg ]; then
   pac="pkg"
-  system="termux"
 elif [ `command -v apt` ]; then
   pac="apt"
-  system="linux"
 elif [ `command -v apt-get` ]; then
   pac="apt-get"
-  system="linux"
 elif [ `command -v apk` ]; then
   pac="apk"
-  system="linux"
 elif [ `command -v dnf` ]; then
-    pac="dnf"
-    system="fedora"
+  pac="dnf"
 elif [ `command -v yum` ]; then
   pac="yum"
-  system="fedora"
+elif [ `command -v pacman` ]; then
+  pac="pacman"
+  install="-S"
 elif [ `command -v brew` ]; then
   pac="brew"
-  system="mac"
   sudo=""
 fi
 
+# install a package by typing less code
+install_pkg () {
+  echo "y" | $sudo $pac $install $1
+}
+
+# If CTRL + C is detected
 trap exit_onex INT 
 exit_onex () {
   clear
@@ -115,6 +119,15 @@ exit_onex () {
   echo -e "${nc}Thanks for using ${green}Onex${nc}"
   exit
 }
+
+# check if missing dependencies
+for each_pac in "curl" "wget" "git"; do
+  if [ ! `command -v $each_pac` ]; then
+    install_pkg $each_pac
+#   Instead of typing:
+#    echo "y" | $sudo $pac $install $each_pac
+  fi
+done
 
 # install tools
 install() {
@@ -147,13 +160,13 @@ install() {
             for dep_name in `echo -e $tool_dependency | tr ',' ' '`; do
               # installing dependency
               if [ ! `command -v $dep_name` ]; then
-                $sudo $pac install $dep_name -y
+                install_pkg $dep_name
               fi
             done
           fi
           # installing tools
           if [ $tool_pac != "" -a $tool_pac != "null" ]; then
-            $sudo $pac install $tool_pac -y
+            install_pkg $tool_pac
           fi
         else
           echo -e "${red}Sorry you are offline !!${nc}"
@@ -182,7 +195,7 @@ install() {
             for dep_name in `echo -e $tool_dependency | tr ',' ' '`; do
               # installing dependency
               if [ ! `command -v $dep_name` ]; then
-                $sudo $pac install $dep_name -y
+                install_pkg $dep_name
               fi
             done
           fi
@@ -217,7 +230,7 @@ install() {
             for dep_name in `echo -e $tool_dependency | tr ',' ' '`; do
               # installing dependency
               if [ ! `command -v $dep_name` ]; then
-                $sudo $pac install $dep_name -y
+                install_pkg $dep_name
               fi
             done
           fi
@@ -277,13 +290,13 @@ install_category_tool() {
             for dep_name in `echo -e $tool_dependency | tr ',' ' '`; do
               # installing dependency
               if [ ! `command -v $dep_name` ]; then
-                $sudo $pac install $dep_name -y
+                install_pkg $dep_name
               fi
             done
           fi
           # installing tools
           if [ $tool_pac != "" -a $tool_pac != "null" ]; then
-            $sudo $pac install $tool_pac -y
+            install_pkg $tool_pac
           fi
         else
           echo -e "${red}Sorry you are offline !!${nc}"
@@ -312,7 +325,7 @@ install_category_tool() {
             for dep_name in `echo -e $tool_dependency | tr ',' ' '`; do
               # installing dependency
               if [ ! `command -v $dep_name` ]; then
-                $sudo $pac install $dep_name -y
+                install_pkg $dep_name
               fi
             done
           fi
@@ -347,7 +360,7 @@ install_category_tool() {
             for dep_name in `echo -e $tool_dependency | tr ',' ' '`; do
               # installing dependency
               if [ ! `command -v $dep_name` ]; then
-                $sudo $pac install $dep_name -y
+                install_pkg $dep_name
               fi
             done
           fi
@@ -503,7 +516,6 @@ update() {
     echo -e "${green}Updating ...${nc}"
     sleep 1
 
-    if ! command -v "git"; then $sudo $pac install git -y; fi
     git clone $onex_link $download_dir/onex
     $sudo chmod +x $download_dir/onex/install
     $sudo sh $download_dir/onex/install
@@ -522,7 +534,7 @@ about() {
   echo -e "$logo"
   echo -e " ${yellow}About: ${cyan}Onex installs the most famous pentesting tools.\n${nc}"
   echo -e " ${yellow}GitHub:  ${red}https://github.com/1RaY-1/onex${nc}"
-  echo -e " ${yellow}Version: ${red} 0.2${nc}"
+  echo -e " ${yellow}Version: ${red} ${__version__}${nc}"
   echo -e " ${yellow}License: ${red} MIT${nc}"
   echo -e "\n\n ${red}Warning:${nc}"
   echo -e " ${cyan}This Tool is made for educational purpose only!${nc}"
@@ -618,7 +630,6 @@ cli_update() {
   if [ $? -eq 0 ]; then
     echo -e "${green}Updating ...${nc}"
     sleep 1
-    if ! command -v "git"; then $sudo $pac install git -y; fi
     git clone $onex_link $download_dir/onex
     update_process
     echo -e "${nc}'onex' ${green} updated successfully !!${nc}"
@@ -660,13 +671,13 @@ install_process() {
             for dep_name in `echo -e $tool_dependency | tr ',' ' '`; do
               # installing dependency
               if [ ! `command -v $dep_name` ]; then
-                $sudo $pac install $dep_name -y
+                install_pkg $dep_name
               fi
             done
           fi
           # installing tools
           if [ $tool_pac != "" -a $tool_pac != "null" ]; then
-            $sudo $pac install $tool_pac -y
+            install_pkg $tool_pac
           fi
         else
           echo -e "${red}Sorry you are offline !!${nc}"
@@ -695,7 +706,7 @@ install_process() {
             for dep_name in `echo -e $tool_dependency | tr ',' ' '`; do
               # installing dependency
               if [ ! `command -v $dep_name` ]; then
-                $sudo $pac install $dep_name -y
+                install_pkg $dep_name
               fi
             done
           fi
@@ -731,7 +742,7 @@ install_process() {
             for dep_name in `echo -e $tool_dependency | tr ',' ' '`; do
               # installing dependency
               if [ ! `command -v $dep_name` ]; then
-                $sudo $pac install $dep_name -y
+                install_pkg $dep_name
               fi
             done
           fi
@@ -831,7 +842,7 @@ if [ $# -eq 1 ]; then
       cli_remove
     ;;
     help|-h)
-      echo -e "${yellow}Onex ${red} v0.2"
+      echo -e "${yellow}Onex ${red} v${__version__}"
       echo -e "${nc}Usage ${nc}: ${yellow} onex ${nc}[option]... [toolname]...${nc}"
       echo -e "\n  ${blue}Option  \tDescription${nc}"
       echo  -e "  -----------  \t--------------------"
