@@ -243,7 +243,6 @@ nginx|nginx|web_server,package|null|package_manager|null
 nikto|nikto|information_gathering|https://github.com/sullo/nikto.git|git|perl,git
 nishang|nishang|maintaining_access|https://github.com/samratashok/nishang.git|git|git
 nmap|nmap|information_gathering,vulnerability_scanner|null|package_manager|null
-nodejs|nodejs|programming_language|null|package_manager|null
 nodexp|nodexp|null|https://github.com/esmog/nodexp.git|git|python,git
 noisy|noisy|null|https://github.com/1tayH/noisy.git|git|python,git
 onioff|onioff|null|https://github.com/k4m4/onioff.git|git|python,git
