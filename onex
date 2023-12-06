@@ -518,7 +518,7 @@ update() {
 
     git clone $onex_link $download_dir/onex
     $sudo chmod +x $download_dir/onex/install
-    $sudo sh $download_dir/onex/install
+    $sudo bash $download_dir/onex/install
 
     echo -e "${green} onex updated !!${nc}"
     sleep 1
