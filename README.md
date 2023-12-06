@@ -29,6 +29,7 @@ Onex works on any of the following operating systems:
   
   - `curl`
   - `git`
+  - `wget`
 </details>
 
 ------------------------------------------------------------------------
