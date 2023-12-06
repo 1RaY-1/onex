@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # Name : Onex installer script
 # Read about onex in README.md 
 
@@ -140,4 +140,3 @@ else
   echo " Please try again"
   echo " If you can't solve the problem, tell about your problem in:  https://github.com/1RaY-1/onex/issues"
 fi
-cd $HOME
